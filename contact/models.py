@@ -8,7 +8,7 @@ from django.utils import timezone
 # Model usado para criar o CRUD
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50, blank=True)
     phone = models.CharField(max_length=50)
     # blank torna um campo obrigatório ou não, porém não afeta na base de dados
     # EmailField() possui um validador de email
@@ -17,3 +17,6 @@ class Contact(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     # TextField() não necessita de definir tamanho de caracter
     description = models.TextField(blank=True)
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
