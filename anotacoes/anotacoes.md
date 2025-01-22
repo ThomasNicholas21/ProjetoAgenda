@@ -120,8 +120,11 @@ def exemplo(request, id):
 
 ```
 
-### migrations
+### migrations / models
 Sistema no qual gerencia alterações feitas no esquema do banco de dados de forma organizada eautomatizada. Permitindo que mudanças, como adicionar, alterar ou remover campos, sejam feitas sem precisar de escrever SQL manualmente.
+
+Models são usados para definir a estrutura e comportamento dos dados armazenados no banco de dados, representando as tabelas dos bancos de dados. As classes são equivalentes as tabelas, e os atributos equivalente as colunas. No Django o ID já é criado de forma automática. 
+As classes estarão herdando de Models disponibilizado pelo Django para fazer a relação com banco de dados. Os atributos estarão sendo utilizados para definir o tipo de variável que cada coluna estará utilizando.
 
 # Django HTML
 ### extends
