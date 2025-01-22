@@ -87,6 +87,14 @@ Toda a configuração da aplicação é feita nesse arquivo, definindo váriavei
 ```cmd
 >python manage.py migrate
 ```
+
+### Criar super usuário Django
+```cmd
+>python manage.py createsuperuser
+```
+```cmd
+>python manage.py changepassword USERNAME
+```
 ### Coletar arquivos estáticos
 Esse comando se utiliza quando a aplicação irá rodar em produção. Como Django não é um servidor, ele coleta e cria um diretório para que o mesmo seja configurado em um servidor. Para o mesmo funcionar, deve ser criado uma variável de ambiente STATIC_ROOT, indicando aonde esse diretório deve ser criado.
 ```cmd
