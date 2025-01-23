@@ -6,4 +6,6 @@ from contact import models
 
 # Função decoradora que permite registrar
 @admin.register(models.Contact)
-class ContactAdmin(admin.ModelAdmin): ...
+class ContactAdmin(admin.ModelAdmin):
+    # permite criar uma coluna para o painel administrativo
+    list_display = 'id', 'first_name', 'last_name', 'phone', 'description'
