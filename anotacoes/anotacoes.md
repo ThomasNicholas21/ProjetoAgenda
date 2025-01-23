@@ -100,6 +100,20 @@ Toda a configuração da aplicação é feita nesse arquivo, definindo váriavei
 ```cmd
 >python manage.py shell
 ```
+```python
+>from app.models import model
+>obj = model(atribut='valor')
+>obj.save() # comita modificações para base de dados
+>obj.atribut = 'outro valor'
+>obj.save()
+>obj.delete() # delete as modificações
+>obj = model.objects.get(id='1') # manager   
+>obj.atribut = 'outro de outro valor' # get pega o elemento 1 e possibilita a alteração
+>obj = model.objects.all() # Seleciona todos os valores
+>for value in obj: value.first_name
+>obj = model.objects.all().order_by('-id')
+>obj = model.objects.create(first_name='Fulano') # cria direto na base de dados
+```
 
 ### Coletar arquivos estáticos
 Esse comando se utiliza quando a aplicação irá rodar em produção. Como Django não é um servidor, ele coleta e cria um diretório para que o mesmo seja configurado em um servidor. Para o mesmo funcionar, deve ser criado uma variável de ambiente STATIC_ROOT, indicando aonde esse diretório deve ser criado.
