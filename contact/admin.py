@@ -15,3 +15,6 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = 'created_date',
     # permite criar barra de pesquisa
     search_fields = 'id', 'first_name', 'last_name'
+    # cria uma paginação, permitindo controlar quantidade
+    # de objetos criados
+    list_per_page = 1
