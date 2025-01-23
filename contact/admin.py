@@ -22,3 +22,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_max_show_all = 50
     # permite a edição sem a necessidade de acessar a url
     list_editable = 'last_name'
+    # permite acessar a url pelas variavéis definidas
+    # OBS: não é possível deixar uma variável como editável 
+    # e acessível por link.
+    list_display_links = 'first_name'
