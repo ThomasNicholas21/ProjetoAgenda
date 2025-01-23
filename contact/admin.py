@@ -20,3 +20,5 @@ class ContactAdmin(admin.ModelAdmin):
     list_per_page = 1
     # definie o máximo de objetos mostrado em uma página só
     list_max_show_all = 50
+    # permite a edição sem a necessidade de acessar a url
+    list_editable = 'last_name'
