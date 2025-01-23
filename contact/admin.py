@@ -11,3 +11,5 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = 'id', 'first_name', 'last_name', 'phone', 'description'
     # permite ordenar as colunas de forma crescente e descrescente
     ordering = '-id',
+    # permite criar filtros
+    list_filter = 'created_date',
