@@ -126,6 +126,11 @@ Sistema no qual gerencia alterações feitas no esquema do banco de dados de for
 Models são usados para definir a estrutura e comportamento dos dados armazenados no banco de dados, representando as tabelas dos bancos de dados. As classes são equivalentes as tabelas, e os atributos equivalente as colunas. No Django o ID já é criado de forma automática. 
 As classes estarão herdando de Models disponibilizado pelo Django para fazer a relação com banco de dados. Os atributos estarão sendo utilizados para definir o tipo de variável que cada coluna estará utilizando.
 
+### Admin Django
+A área administrativa do Django permite ao usuário acessar o painel administrativo, onde é possível gerenciar usuários e os models criados na aplicação. Para tornar os models visíveis e manipuláveis nesse painel, é necessário registrá-los no arquivo admin.py utilizando a função decoradora ou o método admin.site.register fornecido pelo módulo administrativo do Django.
+
+Além disso, o painel administrativo pode ser personalizado para exibir, filtrar ou ordenar campos, bem como para criar interfaces específicas para modelos complexos, usando classes como ModelAdmin.
+
 # Django HTML
 ### extends
 Herança de template utilizado.
