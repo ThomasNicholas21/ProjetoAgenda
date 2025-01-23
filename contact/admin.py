@@ -13,3 +13,5 @@ class ContactAdmin(admin.ModelAdmin):
     ordering = '-id',
     # permite criar filtros
     list_filter = 'created_date',
+    # permite criar barra de pesquisa
+    search_fields = 'id', 'first_name', 'last_name'
