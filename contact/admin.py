@@ -9,3 +9,5 @@ from contact import models
 class ContactAdmin(admin.ModelAdmin):
     # permite criar uma coluna para o painel administrativo
     list_display = 'id', 'first_name', 'last_name', 'phone', 'description'
+    # permite ordenar as colunas de forma crescente e descrescente
+    ordering = '-id',
