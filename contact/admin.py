@@ -18,3 +18,5 @@ class ContactAdmin(admin.ModelAdmin):
     # cria uma paginação, permitindo controlar quantidade
     # de objetos criados
     list_per_page = 1
+    # definie o máximo de objetos mostrado em uma página só
+    list_max_show_all = 50
