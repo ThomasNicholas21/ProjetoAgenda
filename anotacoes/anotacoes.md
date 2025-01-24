@@ -165,6 +165,17 @@ Em caso de imagens, o Django depende da biblioteca pillow.
 >pip install pillow
 ```
 
+Para configurar a URL de media, para que a aplicação saiba o caminho desse arquivo é necessário configurar na **url.py** no projeto, concatenando o arquivo estático com as urlpatterns.
+```python
+# realizar importação para urls de arquivo estático
+from django.conf.urls.static import static
+# importa as settings.py do projeto
+from django.conf import settings
+
+# concatena arquivo estático da MEDIA configurada no ambiente
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
 # Django HTML
 ### extends
 Herança de template utilizado.
