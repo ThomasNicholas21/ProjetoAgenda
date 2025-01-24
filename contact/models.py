@@ -19,6 +19,9 @@ class Contact(models.Model):
     description = models.TextField(blank=True)
     # registra todos os contatos para estarem aparecendo
     show = models.BooleanField(default=True)
+    # registra atributos de imagens de forma não obrigatória
+    # especifíca o caminho de upload.
+    picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/%d')
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
