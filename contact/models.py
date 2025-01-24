@@ -25,6 +25,18 @@ class Contact(models.Model):
     # registra atributos de imagens de forma não obrigatória
     # especifíca o caminho de upload.
     picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/%d')
+    # isso é uma chave estrangeira, logo deve-se criar o novo model
+    # on_delete - parametro que define se o contato será apagado caso a categoria for.
+    # models.CASCADE - deleta todos os contatos que possue a categoria
+    # models.SET_NULL - quando delete a categoria, o contato fica como null
+    # Descrição - A categoria não é obrigatória, pode ser nula, e caso for apagada
+    # o contato não é apagado, e sua categoria ficará nula.
+    category = models.ForeignKey(
+        Category, 
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
