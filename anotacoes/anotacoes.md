@@ -151,6 +151,14 @@ A área administrativa do Django permite ao usuário acessar o painel administra
 
 Além disso, o painel administrativo pode ser personalizado para exibir, filtrar ou ordenar campos, bem como para criar interfaces específicas para modelos complexos, usando classes como ModelAdmin.
 
+### Media
+Nas variáveis de ambiente, "media/" é tudo aquilo que o usuário envia, ou seja, é o upload de arquivos do mesmo. Para realizar tal ação é necessário configurar as variáveis de ambiente **MEDIA_ROOT** e **MEDIA_URL**, no qual específica a url e o diretório desses arquivos.
+
+Para conseguir fazer upload, é necessário especificar no model, um field chamado **ImageField**, e nele especificar o caminho sem considerar o diretório, uma vez que ele já foi configurado nas variáveis de ambiente. Necessário passar o parâmetro **upload_to='nome/date(%Y,%m,%d)'**.
+```python
+class exemplo(models.Model):
+    image = model.ImageFied(upload_to='nome/date')
+```
 # Django HTML
 ### extends
 Herança de template utilizado.
