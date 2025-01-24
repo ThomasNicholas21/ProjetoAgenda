@@ -6,6 +6,9 @@ from django.utils import timezone
 
 # O ID é criado de forma automática pelo Django.
 # Model usado para criar o CRUD
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50, blank=True)
@@ -25,3 +28,4 @@ class Contact(models.Model):
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
+    
