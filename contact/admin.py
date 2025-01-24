@@ -6,7 +6,9 @@ from contact import models
 
 # Função decoradora que permite registrar
 @admin.register(models.Category)
-class CategoryAdmin(admin.ModelAdmin): ...
+class CategoryAdmin(admin.ModelAdmin): 
+    list_display = 'name',
+    ordering = 'name'
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
