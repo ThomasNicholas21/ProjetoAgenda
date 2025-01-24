@@ -159,6 +159,12 @@ Para conseguir fazer upload, é necessário especificar no model, um field chama
 class exemplo(models.Model):
     image = model.ImageFied(upload_to='nome/date')
 ```
+
+Em caso de imagens, o Django depende da biblioteca pillow.
+```cmd
+>pip install pillow
+```
+
 # Django HTML
 ### extends
 Herança de template utilizado.
