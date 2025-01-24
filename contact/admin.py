@@ -8,7 +8,7 @@ from contact import models
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin): 
     list_display = 'name',
-    ordering = 'name'
+    ordering = 'name',
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
