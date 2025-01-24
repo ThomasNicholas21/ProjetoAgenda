@@ -27,3 +27,6 @@ urlpatterns = [
 # configuração permite concatenar url statica de media
 # no qual permite acessar url de imagens
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# realiza a mesma configuração para arquivos estático
+# porém, não é necessário a não ser em casos específicos.
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
