@@ -5,6 +5,9 @@ from contact import models
 # Configura os models dentro do painel administrativo do Django
 
 # Função decoradora que permite registrar
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin): ...
+
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
     # permite criar uma coluna para o painel administrativo
