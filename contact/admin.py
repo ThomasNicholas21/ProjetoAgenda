@@ -13,7 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
     # permite criar uma coluna para o painel administrativo
-    list_display = 'id', 'first_name', 'last_name', 'phone', 'description', 'show'
+    list_display = 'id', 'first_name', 'last_name', 'phone', 'category', 'show'
     # permite ordenar as colunas de forma crescente e descrescente
     ordering = '-id',
     # permite criar filtros
