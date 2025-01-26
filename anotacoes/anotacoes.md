@@ -213,3 +213,24 @@ Servidor que pode ser utilizado para "servir" arquivos estáticos. Ele é um mid
 >pip install whinoise
 ``` 
 Colocar _"whitenoise.middleware.WhiteNoiseMiddleware",_ abaixo de middleware de segurança do Django.
+
+### faker
+Essa biblioteca é utilizada para preencher dados falsos dentro de uma aplicação, normalmente utilizado para testes. Essese dados incluem nomes, endereçoes, números, datas, textos e entre outros.
+```cmd
+>pip install faker
+```
+Necessário definir a localidade utilizada na aplicação por "pt_br". Exemplo de uso:
+```python
+from faker import Faker
+from myapp.models import Contact
+
+fake = Faker('pt_BR')
+
+for _ in range(10):
+    Contact.objects.create(
+        name=fake.name(),
+        phone=fake.phone_number(),
+        email=fake.email(),
+        address=fake.address()
+    )
+```
