@@ -17,7 +17,7 @@ class ContactAdmin(admin.ModelAdmin):
     # permite ordenar as colunas de forma crescente e descrescente
     ordering = '-id',
     # permite criar filtros
-    list_filter = 'created_date',
+    #list_filter = 'created_date',
     # permite criar barra de pesquisa
     search_fields = 'id', 'first_name', 'last_name'
     # cria uma paginação, permitindo controlar quantidade
