@@ -22,7 +22,7 @@ class ContactAdmin(admin.ModelAdmin):
     search_fields = 'id', 'first_name', 'last_name'
     # cria uma paginação, permitindo controlar quantidade
     # de objetos criados
-    list_per_page = 1
+    list_per_page = 25
     # definie o máximo de objetos mostrado em uma página só
     list_max_show_all = 50
     # permite a edição sem a necessidade de acessar a url
