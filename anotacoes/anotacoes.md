@@ -175,6 +175,13 @@ from django.conf import settings
 # concatena arquivo estático da MEDIA configurada no ambiente
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
+### Meta class
+A classe chamada **_meta_** é chamada dentro de um model e é utilizada para definir metados que influenciam no comportamento do model, como ordenação, nomes de tabelas, nomes de exibição e outro. Permitindo personalizar e controlar aspectos de um model sem alterar a lógica principal. aplicações:
+    - **ordering:** Define a ordem padrão dos registros ao serem recuperados do banco de dados.
+    - **verbose_name e verbose_name_plural:** Especificam nomes legíveis para o model no singular e plural, respectivamente.
+    - **db_table:** Permite definir um nome personalizado para a tabela no banco de dados.
+    - **unique_together:** Estabelece uma restrição de unicidade combinada em um conjunto de campos.
+    - **permissions:** Adiciona permissões personalizadas além das padrão (adicionar, alterar, deletar, visualizar).
 
 # Django HTML
 ### extends
