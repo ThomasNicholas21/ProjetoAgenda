@@ -1,6 +1,8 @@
 from django.db import models
 # modulo de utilitários
 from django.utils import timezone
+#importando usuário do Django
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -44,6 +46,14 @@ class Contact(models.Model):
     # o contato não é apagado, e sua categoria ficará nula.
     category = models.ForeignKey(
         Category, 
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
+    # criando um foreignkey de model do django, permitindo distinguir qual usuário pertence
+    # cada contato.
+    owner = models.ForeignKey(
+        User, 
         on_delete=models.SET_NULL,
         blank=True,
         null=True
