@@ -7,6 +7,11 @@ from django.utils import timezone
 # O ID é criado de forma automática pelo Django.
 # Model usado para criar o CRUD
 class Category(models.Model):
+    class Meta:
+        # sempre quando procura o singular desse model
+        # será 'Category'
+        verbose_name = 'Category'
+
     name = models.CharField(max_length=50)
 
     def __str__(self):
