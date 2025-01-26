@@ -11,6 +11,9 @@ class Category(models.Model):
         # sempre quando procura o singular desse model
         # será 'Category'
         verbose_name = 'Category'
+        # sempre quando achar o plural desse model 
+        # será 'Categorys'
+        verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=50)
 
