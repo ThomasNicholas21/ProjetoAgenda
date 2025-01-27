@@ -5,7 +5,7 @@ from contact.models import Contact
 def index(request):
     contacts = Contact.objects.all()
     context = {
-        'contacts': contacts,    
+        'contacts': contacts, 
     }
 
     return render(
