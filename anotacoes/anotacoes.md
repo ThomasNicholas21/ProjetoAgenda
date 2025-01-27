@@ -197,6 +197,16 @@ DEBUG: bool = True
 ALLOWED_HOSTS: list[str] = []
 ```
 
+### packages
+Ao criar um aplicativo com Django, o mesmo realiza sugestões de como estrutarar arquivos, mas dependendo da aplicação é interessante criar packages para melhor organização. Por exemplo, um ambiente que terá muitas views, interessante separar uma package com módulos dentro.
+```
+-contact
+    -migrations
+    -templates
+    -views
+        - __init__.py
+        - outras_views.py
+```
 # Django HTML
 ### extends
 Herança de template utilizado.
