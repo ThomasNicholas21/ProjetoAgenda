@@ -110,23 +110,27 @@
     border-radius: var(--default-border-radius);
   }
   
+  /*Tabela responsiva, permite criar uma tabela no qual 
+  fique padronizada sem passar do corpo do site
+  index.html
+  */
   .responsive-table {
     width: 100%;
     overflow-x: auto;
   }
-  
+  /*index.html*/
   .contacts-table {
     width: 100%;
     min-width: var(--table-min-width);
     border-collapse: collapse;
   }
-  
+  /*index.html*/
   .table-caption {
     font-size: var(--medium-font-size);
     font-weight: bold;
     padding: var(--spacing);
   }
-  
+  /*index.html*/
   .table-row {
     text-align: left;
     text-overflow: ellipsis;
@@ -140,12 +144,13 @@
   .table-row:not(.table-row-header):hover {
     background: var(--clr-dark-shadow-10);
   }
-  
+  /*index.html*/
   .table-row-header {
     background: var(--clr-light-gray);
     color: var(--clr-black);
   }
   
+  /*index.html*/
   .table-cel,
   .table-header {
     padding: var(--spacing);
