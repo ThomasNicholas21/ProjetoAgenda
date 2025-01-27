@@ -2,4 +2,9 @@
 
 {% block content %}
     <h1>Agenda</h1>
+    {% for contact in contacts %}
+    <h1>{{ contact.first_name }}</h1>
+    <div>{{ contact.phone }}</div>
+    <div>{{ contact.category }}</div>
+    {% endfor %}
 {% endblock content %}
