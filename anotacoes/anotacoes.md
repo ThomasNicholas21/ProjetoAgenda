@@ -183,6 +183,20 @@ A classe chamada **_meta_** é chamada dentro de um model e é utilizada para de
     - **unique_together:** Estabelece uma restrição de unicidade combinada em um conjunto de campos.
     - **permissions:** Adiciona permissões personalizadas além das padrão (adicionar, alterar, deletar, visualizar).
 
+### local_settings
+Com a finalidade de evitar que informações importantes não subam para o servidor que estará hosteando a aplicação, o **local_setings** é utilizado para que essas informações fiquem apenas no localhost. Dessa forma, deixa a aplicação com menos conflito dentro do git e com o ambiente em produção. Para realizar a configuração é necessário importar o módulo dentro do arquivo _project.settings.py_
+```python
+try:
+    from project.local_settings import *
+except ImportError: ...
+```
+No arquivo local_settings.py vai ter todas as variáveis de ambiente que deseja configurar apenas localmente para evitar erros ao subir a aplicação para o servidor. Exemplo:
+```python
+SECRET_KEY: str = 'CHANGE-ME'
+DEBUG: bool = True
+ALLOWED_HOSTS: list[str] = []
+```
+
 # Django HTML
 ### extends
 Herança de template utilizado.
