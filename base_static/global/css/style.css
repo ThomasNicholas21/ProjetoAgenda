@@ -200,12 +200,12 @@
     text-decoration: none;
     display: block;
   }
-  
+  /*base.html*/
   .search {
     display: flex;
     justify-content: center;
   }
-  
+  /*base.html*/
   .search-input {
     font-size: var(--medium-font-size);
     padding: 1rem 2rem;
@@ -214,7 +214,7 @@
     border-radius: var(--default-border-radius);
     border: 1px solid var(--link-light-color);
   }
-  
+  /*base.html*/
   .search-input:focus {
     box-shadow: 0 0 15px var(--link-light-color);
   }
