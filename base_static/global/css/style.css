@@ -53,7 +53,7 @@
     display: block;
     max-width: 100%;
   }
-  
+  /*base.html*/
   .header {
     background: var(--clr-black);
     padding: var(--spacing);
@@ -61,18 +61,18 @@
     z-index: 1;
     position: relative;
   }
-  
+  /*base.html*/
   .header-heading {
     font-size: var(--biggest-font-size);
     text-align: center;
   }
-  
+  /*base.html*/
   .header-link {
     color: var(--link-light-color);
     text-decoration: none;
     transition: filter var(--transition-fast) ease-in-out;
   }
-  
+  /*base.html*/
   .header-link:hover {
     filter: brightness(70%);
   }
@@ -165,18 +165,18 @@
   .table-link:hover {
     color: var(--clr-black);
   }
-  
+  /*contact.html*/
   @media (min-width: 600px) {
     .single-contact {
       max-width: 80%;
       margin: calc(var(--spacing) * 2) auto;
     }
   }
-  
+  /*contact.html*/
   .single-contact h1 {
     margin: 1rem 0;
   }
-  
+  /*contact.html*/
   .single-contact p {
     margin: 1rem 0;
   }
