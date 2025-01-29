@@ -13,3 +13,16 @@ def index(request):
         request,
         'contact/index.html',
         context)
+
+
+def contact(request, contact_id):
+    singles_contact = Contact.objects.get(pk=contact_id)
+
+    context = {
+        'contact': singles_contact, 
+    }
+
+    return render(
+        request,
+        'contact/contact.html',
+        context)
