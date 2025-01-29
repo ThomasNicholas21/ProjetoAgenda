@@ -76,18 +76,18 @@
   .header-link:hover {
     filter: brightness(70%);
   }
-  
+  /*base.html*/
   .menu {
     margin: var(--spacing);
   }
-  
+  /*base.html*/
   .menu-list {
     list-style: none;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
   }
-  
+  /*base.html*/
   .menu-link {
     display: block;
     padding: var(--spacing);
@@ -96,7 +96,7 @@
     transition: background-color var(--transition-fast) ease-in-out;
     border-radius: var(--default-border-radius);
   }
-  
+  /*base.html*/
   .menu-link:hover {
     background: var(--clr-light-shadow-10);
   }
