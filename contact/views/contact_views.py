@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from contact.models import Contact
+from django.http import Http404
 # Create your views here.
 
 def index(request):
@@ -21,7 +22,12 @@ def index(request):
 
 
 def contact(request, contact_id):
-    singles_contact = Contact.objects.get(pk=contact_id)
+    singles_contact = Contact.objects.\
+        filter(pk=contact_id).\
+        first()
+
+    if singles_contact is None:
+        raise Http404()
 
     context = {
         'contact': singles_contact, 
