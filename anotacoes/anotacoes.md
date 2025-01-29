@@ -230,6 +230,18 @@ Utilizar sempre que for utilizar arquivos staticos, irá carregar o aplicativo "
 {% load static %}
 ```
 
+### variavel
+Para chamar uma variavel passada no contexto da view, pode acessar seus dados dentro de chaves.
+```HTML
+<p><b>ID:</b> {{ contact.id }} </p>
+<p><b>E-mail:</b> {{ contact.email }} </p>
+<p><b>Phone:</b> {{ contact.phone }} </p>
+<p><b>Created Date:</b> {{ contact.created_date }} </p>
+<p><b>Description:</b> {{ contact.description }} </p>
+<p><b>Category:</b> {{ contact.category.name }} </p>
+```
+Obs: Quando essa variável é um model e possui foreing key, é possível chamar os dados dessa foreingkey igual o ultimo exemplo catego
+
 # Bibliotecas
 ### whitenoise
 Servidor que pode ser utilizado para "servir" arquivos estáticos. Ele é um middleware que deve ser configurado na variável de ambiente MIDDLEWARE do django.
