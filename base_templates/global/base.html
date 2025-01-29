@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <header class="header">
+        <h1 class="header-heading">
+            <a href="{% url "contact:index" %}" class="header-link">
+            Agenda
+            </a>
+        </h1>
+    </header>
+
+
     <main class='content'>
     {% block content %}{% endblock content %}
     </main>
