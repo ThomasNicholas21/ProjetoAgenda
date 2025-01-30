@@ -26,7 +26,6 @@ def index(request):
     paginator = Paginator(contacts, 20)
 
     page_number = request.GET.get("page")
-    print(request.GET)
     page_obj = paginator.get_page(page_number)
 
     
@@ -34,9 +33,8 @@ def index(request):
     print(contacts.query)
 
     context = {
-        'contacts': contacts, 
-        'title' : 'Contatos - ',
         "page_obj": page_obj,
+        'title' : 'Contatos - ',
     }
 
     return render(
