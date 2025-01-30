@@ -60,13 +60,17 @@ def search(request):
             Q(phone__icontains=search_value) |
             Q(email__icontains=search_value)
             ).\
-        order_by('-id')[:10]
+        order_by('-id')
+
+    paginator = Paginator(contacts, 20)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     # verificando query criada
-    print(contacts.query)
+    #print(contacts.query)
 
     context = {
-        'contacts': contacts, 
+        'page_obj': page_obj, 
         'title' : 'Contatos - ',
     }
 
