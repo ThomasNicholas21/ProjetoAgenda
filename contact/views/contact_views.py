@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import Q
 from contact.models import Contact
 from django.http import Http404
 # Create your views here.
@@ -21,6 +22,38 @@ def index(request):
         'contact/index.html',
         context)
 
+
+def search(request):
+    search_value = request.GET.get('q', '').strip()
+
+    if search_value == '':
+        return redirect('contact:index')
+
+    # utilizando field look ups
+    # https://docs.djangoproject.com/en/4.2/ref/models/querysets/#field-lookups
+    # classe Q permite separar as buscas e utilizar variável "or" com " | "
+    contacts = Contact.objects.\
+        filter(show=True).\
+        filter(
+            Q(first_name__icontains=search_value) |
+            Q(last_name__icontains=search_value) |
+            Q(phone__icontains=search_value) |
+            Q(email__icontains=search_value)
+            ).\
+        order_by('-id')[:10]
+
+    # verificando query criada
+    print(contacts.query)
+
+    context = {
+        'contacts': contacts, 
+        'title' : 'Contatos - ',
+    }
+
+    return render(
+        request,
+        'contact/index.html',
+        context)
 
 def contact(request, contact_id):
     # single_contact = Contact.objects.\
