@@ -1,13 +1,34 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator
 from django.db.models import Q
 from contact.models import Contact
-from django.http import Http404
+# from django.http import Http404
 # Create your views here.
+
+# def listing(request):
+#     contacts = Contact.objects.all()
+#     paginator = Paginator(contacts, 25)  # Show 25 contacts per page.
+
+#     page_number = request.GET.get("page")
+#     page_obj = paginator.get_page(page_number)
+
+#     return render(
+#         request, 
+#         "list.html", 
+#         {"page_obj": page_obj}
+#         )
+
 
 def index(request):
     contacts = Contact.objects.\
         filter(show=True).\
-        order_by('-id')[:10]
+        order_by('-id')
+    paginator = Paginator(contacts, 20)
+
+    page_number = request.GET.get("page")
+    print(request.GET)
+    page_obj = paginator.get_page(page_number)
+
     
     # Mostra como o django realiza 
     print(contacts.query)
@@ -15,6 +36,7 @@ def index(request):
     context = {
         'contacts': contacts, 
         'title' : 'Contatos - ',
+        "page_obj": page_obj,
     }
 
     return render(
@@ -54,6 +76,7 @@ def search(request):
         request,
         'contact/index.html',
         context)
+
 
 def contact(request, contact_id):
     # single_contact = Contact.objects.\
