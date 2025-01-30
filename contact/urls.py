@@ -10,4 +10,6 @@ urlpatterns = [
     path('contact/<int:contact_id>/detail/', views.contact, name='contact'),
     # CRUD - Create
     path('contact/<int:contact_id>/create/', views.contact, name='contact'),
+    # CRUD - UPDATE
+    path('contact/<int:contact_id>/update/', views.contact, name='contact'),
 ]
