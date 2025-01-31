@@ -7,14 +7,12 @@ class ContactForm(forms.ModelForm):
     class Meta: 
         # define qual model esse form se refere
         model = Contact
+        fields = ('first_name', 'last_name', 'phone',)
 
 def create(request):
-    if request.method == 'POST':
-        print(request.method)
-        print(request.POST.get('first_name'))
 
     context = {
-
+        'form': ContactForm(),
     }
 
     return render(
