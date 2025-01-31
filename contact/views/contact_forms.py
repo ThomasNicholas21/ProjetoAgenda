@@ -9,6 +9,12 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ('first_name', 'last_name', 'phone',)
 
+    # pega os dados do formulário
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        print(cleaned_data)
+        return super().clean()
+
 def create(request):
     if request.method == "POST":
         context = {
