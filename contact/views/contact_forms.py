@@ -10,12 +10,23 @@ class ContactForm(forms.ModelForm):
         fields = ('first_name', 'last_name', 'phone',)
 
 def create(request):
+    if request.method == "POST":
+        context = {
+            'form': ContactForm(request.POST),
+        }
+
+        return render(
+                request,
+                'contact/create.html',
+                context
+                )
 
     context = {
-        'form': ContactForm(),
+        'form': ContactForm(request.POST),
     }
 
     return render(
         request,
         'contact/create.html',
-        context)
+        context
+        )
