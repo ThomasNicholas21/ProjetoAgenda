@@ -4,8 +4,9 @@ from contact.models import Contact
 
 
 def create(request):
-    value = request.POST.get('first_name')
-    print(value)
+    if request.method == 'POST':
+        print(request.method)
+        print(request.POST.get('first_name'))
 
     context = {
 
