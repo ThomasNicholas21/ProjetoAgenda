@@ -4,6 +4,9 @@ from contact.models import Contact
 
 
 def create(request):
+    value = request.POST.get('first_name')
+    print(value)
+
     context = {
 
     }
