@@ -219,6 +219,7 @@ Campos de fields
 - *validators* → Lista de funções de validação personalizadas.
 - *help_text* → Texto auxiliar exibido abaixo do campo.
 
+
 ### packages
 Ao criar um aplicativo com Django, o mesmo realiza sugestões de como estrutarar arquivos, mas dependendo da aplicação é interessante criar packages para melhor organização. Por exemplo, um ambiente que terá muitas views, interessante separar uma package com módulos dentro.
 ```
