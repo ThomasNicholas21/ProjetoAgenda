@@ -197,6 +197,19 @@ DEBUG: bool = True
 ALLOWED_HOSTS: list[str] = []
 ```
 
+### CSRF Token Django
+O CSRF (Cross-Site Request Forgery) é um tipo de ataque em que um usuário autenticado executa ações indesejadas em um site sem seu consentimento. Isso ocorre quando uma requisição indesejada é feita em nome do usuário sem que ele perceba.
+O Django utiliza tokens CSRF para impedir esse tipo de ataque. Esse token é um valor único e aleatório, gerado e validado em requisições POST. Ele é incluído no projeto como um middleware, garantindo uma camada adicional de segurança.
+```python
+<form action="/enviar_dados/" method="POST">
+    {% csrf_token %}
+    <input type="text" name="nome">
+    <input type="submit" value="Enviar">
+</form>
+
+```
+
+
 ### packages
 Ao criar um aplicativo com Django, o mesmo realiza sugestões de como estrutarar arquivos, mas dependendo da aplicação é interessante criar packages para melhor organização. Por exemplo, um ambiente que terá muitas views, interessante separar uma package com módulos dentro.
 ```
