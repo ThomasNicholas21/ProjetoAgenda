@@ -209,6 +209,15 @@ O Django utiliza tokens CSRF para impedir esse tipo de ataque. Esse token é um 
 
 ```
 
+### Form
+Esse módulo Django facilita a criação de formulários e sua respectiva validação, permitindo a criação baseado no banco de dados com _ModelForm_ e outros modos. Possui métodos como __clean()__ que é utilizado para validar e processar dados, e também permite utilizar fields que representam campos de um formulário.
+Campos de fields 
+- *required* → Define se o campo é obrigatório (True por padrão).
+- *label* → Texto exibido como rótulo do campo.
+- *initial* → Valor inicial do campo.
+- *widget* → Controla como o campo será renderizado no HTML.
+- *validators* → Lista de funções de validação personalizadas.
+- *help_text* → Texto auxiliar exibido abaixo do campo.
 
 ### packages
 Ao criar um aplicativo com Django, o mesmo realiza sugestões de como estrutarar arquivos, mas dependendo da aplicação é interessante criar packages para melhor organização. Por exemplo, um ambiente que terá muitas views, interessante separar uma package com módulos dentro.
