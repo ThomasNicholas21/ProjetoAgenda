@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from contact.models import Contact
 from django import forms
+from django.core.exceptions import ValidationError
 
 class ContactForm(forms.ModelForm):
     class Meta: 
@@ -12,7 +13,15 @@ class ContactForm(forms.ModelForm):
     # pega os dados do formulário
     def clean(self):
         cleaned_data = self.cleaned_data
-        print(cleaned_data)
+        
+        self.add_error(
+            'first_name',
+            ValidationError(
+                'Erro',
+                code='invalid'
+            )
+        )
+
         return super().clean()
 
 def create(request):
