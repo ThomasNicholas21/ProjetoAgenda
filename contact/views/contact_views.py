@@ -30,7 +30,7 @@ def index(request):
 
     
     # Mostra como o django realiza 
-    print(contacts.query)
+    # print(contacts.query)
 
     context = {
         "page_obj": page_obj,
