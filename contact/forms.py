@@ -8,6 +8,14 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ('first_name', 'last_name', 'phone',)
 
+        # permite definir atributos dentro de tags do forms
+        widgets = {
+            'first_name': forms.TextInput(
+                attrs={
+                    'placeholder':'Escreva seu nome'
+                }
+            )
+        }
     # pega os dados do formulário
     def clean(self):
         cleaned_data = self.cleaned_data
