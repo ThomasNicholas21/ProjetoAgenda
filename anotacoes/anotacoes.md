@@ -182,6 +182,7 @@ A classe chamada **_meta_** é chamada dentro de um model e é utilizada para de
     - **db_table:** Permite definir um nome personalizado para a tabela no banco de dados.
     - **unique_together:** Estabelece uma restrição de unicidade combinada em um conjunto de campos.
     - **permissions:** Adiciona permissões personalizadas além das padrão (adicionar, alterar, deletar, visualizar).
+    - **widgets:** Dicionário quer permite alterar um padrão para forms.
 
 ### local_settings
 Com a finalidade de evitar que informações importantes não subam para o servidor que estará hosteando a aplicação, o **local_setings** é utilizado para que essas informações fiquem apenas no localhost. Dessa forma, deixa a aplicação com menos conflito dentro do git e com o ambiente em produção. Para realizar a configuração é necessário importar o módulo dentro do arquivo _project.settings.py_
