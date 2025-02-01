@@ -217,6 +217,48 @@ Campos de fields
 - *label* → Texto exibido como rótulo do campo.
 - *initial* → Valor inicial do campo.
 - *widget* → Controla como o campo será renderizado no HTML.
+```python
+# formas de configurar widgets
+
+# Classe Meta
+class ContactForm(forms.ModelForm):
+    class Meta: 
+        # define qual model esse form se refere
+        model = Contact
+        fields = ('first_name', 'last_name', 'phone',)
+
+        widgets = {
+            'first_name': forms.TextInput(
+                attrs={
+                    'placeholder':'Escreva seu nome'
+                }
+            )
+        }
+
+# através do forms
+class ContactForm(forms.ModelForm):
+    first_name = forms.CharField(
+        widgets=forms.TextInput(
+                attrs={
+                    'placeholder':'Escreva seu nome'
+            }
+        )
+    )
+
+# através do Python
+class ContactForm(forms.ModelForm):
+    # recebe qualquer argumento
+    def __init__(self, args*, kwargs**):
+        # inicializa a superclass com os argumentos
+        super().__init__(args*, kwargs**)
+
+        self.fields['first_name'].widgets.attrs.update(
+            {
+                'placeholder':'Escreva seu nome'
+            }
+        )
+
+```
 - *validators* → Lista de funções de validação personalizadas.
 - *help_text* → Texto auxiliar exibido abaixo do campo.
 
