@@ -28,28 +28,35 @@ class ContactForm(forms.ModelForm):
     # pega os dados do formulário
     def clean(self): 
         cleaned_data = self.cleaned_data
-        
-        self.add_error(
-            'first_name',
-            ValidationError(
-                'Erro',
-                code='invalid'
-            )
-        )
+        first_name = self.cleaned_data.get('first_name')
+        last_name = self.cleaned_data.get('last_name')
+
+        if first_name == last_name:
+            msg_first = ValidationError(
+                    'Primeiro nome não pode ser igual ao segundo',
+                    code='invalid'
+                )
+            msg_last = ValidationError(
+                    'Segundo nome não pode ser igual ao segundo',
+                    code='invalid'
+                )
+            
+            self.add_error('first_name', msg_first)
+            self.add_error('last_name', msg_last)
 
         return super().clean()
 
 
-    def clean_first_name(self):
-        first_name = self.cleaned_data.get('first_name')
+    # def clean_first_name(self):
+    #     first_name = self.cleaned_data.get('first_name')
 
-        if first_name == '1':
-            self.add_error(
-                'first_name',
-                ValidationError(
-                    'Erro',
-                    code='invalid'
-                )
-            )
+    #     if first_name == '1':
+    #         self.add_error(
+    #             'first_name',
+    #             ValidationError(
+    #                 'Erro',
+    #                 code='invalid'
+    #             )
+    #         )
 
-        return first_name
+    #     return first_name
