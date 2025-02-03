@@ -15,7 +15,11 @@ class ContactForm(forms.ModelForm):
     class Meta: 
         # define qual model esse form se refere
         model = Contact
-        fields = ('first_name', 'last_name', 'phone',)
+        fields = (
+            'first_name', 'last_name', 
+            'phone', 'email', 
+            'description', 'category'
+            )
 
         # permite definir atributos dentro de tags do forms
         # widgets = {
