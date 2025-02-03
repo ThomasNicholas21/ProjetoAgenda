@@ -27,13 +27,21 @@ class ContactForm(forms.ModelForm):
         ),
         label='Telefone',
     )
-    email = forms.CharField(
+    email = forms.EmailField(
         widget=forms.TextInput(
             attrs={
                 'placeholder':'Insira o e-mail'
             }
         ),
         label='E-mail',
+    )
+    description = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'placeholder':'Insira a descrição.'
+            }
+        ),
+        label='Descrição',
     )
     
     
