@@ -27,6 +27,15 @@ class ContactForm(forms.ModelForm):
         ),
         label='Telefone',
     )
+    email = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder':'Insira o e-mail'
+            }
+        ),
+        label='E-mail',
+    )
+    
     
 
     class Meta: 
