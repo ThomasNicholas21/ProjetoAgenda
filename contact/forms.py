@@ -11,6 +11,15 @@ class ContactForm(forms.ModelForm):
         ),
         label='Primeiro Nome',
     )
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder':'Escreva seu segundo nome'
+            }
+        ),
+        label='Segundo Nome',
+    )
+    
 
     class Meta: 
         # define qual model esse form se refere
