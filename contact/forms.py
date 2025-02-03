@@ -6,7 +6,7 @@ class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder':'Escreva seu primeiro nome'
+                'placeholder':'Insira o primeiro nome'
             }
         ),
         label='Primeiro Nome',
@@ -14,7 +14,7 @@ class ContactForm(forms.ModelForm):
     last_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder':'Escreva seu segundo nome'
+                'placeholder':'Insira o segundo nome'
             }
         ),
         label='Segundo Nome',
@@ -22,7 +22,7 @@ class ContactForm(forms.ModelForm):
     phone = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'placeholder':'Número de Telefone'
+                'placeholder':'Insira o número de Telefone'
             }
         ),
         label='Telefone',
