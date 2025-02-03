@@ -19,6 +19,14 @@ class ContactForm(forms.ModelForm):
         ),
         label='Segundo Nome',
     )
+    phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder':'Número de Telefone'
+            }
+        ),
+        label='Telefone',
+    )
     
 
     class Meta: 
