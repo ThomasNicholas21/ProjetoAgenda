@@ -1,18 +1,22 @@
 from django.shortcuts import render, redirect
 from contact.forms import ContactForm
+from django.urls import reverse
 
 def create(request):
+    form_action = reverse('contact:create')
+
     if request.method == "POST":
         form = ContactForm(request.POST)
         context = {
             'form': form,
+            'form_action': form_action
         }
 
         # funcao que retorna true se o formulario
         # não retornar nenhum erro
         if form.is_valid(): 
-            form.save()
-            return redirect('contact:create')
+            contact = form.save()
+            return redirect('contact:update', contact_id=contact.pk)
 
 
         return render(
@@ -21,8 +25,10 @@ def create(request):
                 context
                 )
 
+    form = ContactForm()
     context = {
-        'form': ContactForm(request.POST),
+        'form': form,
+        'form_action': form_action
     }
 
     return render(
@@ -30,3 +36,4 @@ def create(request):
         'contact/create.html',
         context
         )
+
