@@ -12,7 +12,9 @@ class ContactForm(forms.ModelForm):
         ),
         label='Primeiro Nome',
     )
+    
     last_name = forms.CharField(
+        required=False,
         widget=forms.TextInput(
             attrs={
                 'placeholder':'Insira o segundo nome'
@@ -30,6 +32,7 @@ class ContactForm(forms.ModelForm):
     )
 
     email = forms.EmailField(
+        required=False,
         widget=forms.TextInput(
             attrs={
                 'placeholder':'Insira o e-mail'
@@ -39,6 +42,7 @@ class ContactForm(forms.ModelForm):
     )
 
     description = forms.CharField(
+        required=False,
         widget=forms.Textarea(
             attrs={
                 'placeholder':'Insira a descrição.'
@@ -48,6 +52,7 @@ class ContactForm(forms.ModelForm):
     )
 
     picture = forms.ImageField(
+        required=False,
         widget=forms.FileInput(
             attrs={
                 'accept': 'image/*'
