@@ -340,3 +340,15 @@
   .btn-delete {
     background: rgb(161, 4, 4);
   }
+
+  .form-link {
+    background-color: var(--link-dark-color);
+    color: var(--clr-white);
+    font-weight: bold;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--default-border-radius);
+    cursor: pointer;
+    transition: filter var(--transition-fast) ease-in-out;
+    text-decoration: none;
+  }
