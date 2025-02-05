@@ -118,7 +118,30 @@ class ContactForm(forms.ModelForm):
 
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(
-        required=True
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Insira seu primeiro nome'
+            }
+        ),
+        label='Nome'
+    )
+
+    last_name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Insira seu sobrenome'
+            }
+        ),
+        label='Sobrenome'
+    )
+    
+    email = forms.EmailField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Insira seu e-mail'
+            }
+        ),
+        label='E-mail'
     )
 
     class Meta:
