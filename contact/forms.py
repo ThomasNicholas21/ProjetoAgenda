@@ -1,6 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from contact.models import Contact
+from django.contrib.auth.forms import UserCreationForm
 
 class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
@@ -108,3 +109,6 @@ class ContactForm(forms.ModelForm):
     #         )
 
     #     return first_name
+
+class RegisterForm(UserCreationForm):
+    ...
