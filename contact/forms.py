@@ -27,6 +27,7 @@ class ContactForm(forms.ModelForm):
         ),
         label='Telefone',
     )
+
     email = forms.EmailField(
         widget=forms.TextInput(
             attrs={
@@ -35,6 +36,7 @@ class ContactForm(forms.ModelForm):
         ),
         label='E-mail',
     )
+
     description = forms.CharField(
         widget=forms.Textarea(
             attrs={
@@ -43,7 +45,14 @@ class ContactForm(forms.ModelForm):
         ),
         label='Descrição',
     )
-    
+
+    picture = forms.ImageField(
+        widget=forms.FileInput(
+            attrs={
+                'accept': 'image/*'
+            }
+        )
+    )
     
 
     class Meta: 
@@ -52,7 +61,8 @@ class ContactForm(forms.ModelForm):
         fields = (
             'first_name', 'last_name', 
             'phone', 'email', 
-            'description', 'category'
+            'description', 'category',
+            'picture'
             )
 
         # permite definir atributos dentro de tags do forms
