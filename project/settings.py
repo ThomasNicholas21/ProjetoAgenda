@@ -110,7 +110,7 @@ LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
-USE_I18N = False # utilizado para tradução
+USE_I18N = True # utilizado para tradução
 
 USE_TZ = True
 
