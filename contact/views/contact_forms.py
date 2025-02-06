@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from contact.models import Contact
 from contact.forms import ContactForm
 from django.urls import reverse
+from django.contrib import messages
 
 def create(request):
     form_action = reverse('contact:create')
+    
+    messages.info(request, message='texto qualquer')
 
     if request.method == "POST":
         form = ContactForm(request.POST, request.FILES)
