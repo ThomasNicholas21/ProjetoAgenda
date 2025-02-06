@@ -5,20 +5,19 @@ from django.contrib import messages
 def register(request):
     form = RegisterForm()
 
-    messages.info(request, 'texto')
+    messages.info(request, 'texto qualquer')
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
 
         if form.is_valid():
             form.save()
-
-    context = {
-        'form': form
-    }
+            # messages.success(request, 'Usuário Registrado')
     
     return render(
         request,
         'contact/register.html',
-        context
+        {
+            'form': form,
+        }
     )
