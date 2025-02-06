@@ -3,6 +3,7 @@ from django.urls import reverse
 from contact.forms import RegisterForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib import auth
 
 def register(request):
     form_action = reverse('contact:register')
@@ -32,6 +33,7 @@ def login_view(request):
 
         if form.is_valid():
             user = form.get_user()
+            auth.login(request, user)
     
 
     context = {
