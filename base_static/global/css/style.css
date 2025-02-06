@@ -218,7 +218,7 @@
   .search-input:focus {
     box-shadow: 0 0 15px var(--link-light-color);
   }
-  
+  /*base.html*/
   .message {
     max-width: 600px;
     margin: var(--spacing) auto;
@@ -228,20 +228,25 @@
     border-radius: var(--default-border-radius);
     font-size: var(--smaller-font-size);
   }
-  
+  /*base.html*/
   .message.success {
     background: rgba(0, 255, 0, 0.3);
     border: 1px solid rgba(0, 255, 0, 90%);
   }
-  
+  /*base.html*/
   .message.error {
     background: rgba(255, 0, 0, 0.3);
     border: 1px solid rgba(255, 0, 0, 90%);
   }
-  
+  /*base.html*/
   .message.warning {
     background: rgba(255, 255, 0, 0.3);
     border: 1px solid rgba(255, 255, 0, 90%);
+  }
+  /*base.html*/
+  .message.info {
+    background: rgba(0, 0, 255, 0.3);
+    border: 1px solid rgba(0, 0, 255, 0.3);
   }
   /*contact/create.html*/
   .form-wrapper {
