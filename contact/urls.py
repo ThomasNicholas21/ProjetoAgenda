@@ -23,4 +23,5 @@ urlpatterns = [
     path('user/create/', views.register, name='register'),
     # CRUD - UPDATE
     #path('contact/<int:contact_id>/update/', views.update, name='update'),
+    path('user/login/', views.login_view, name='login'),
 ]
