@@ -6,6 +6,9 @@ def register(request):
     form = RegisterForm()
 
     messages.info(request, 'texto qualquer')
+    messages.success(request, 'texto qualquer')
+    messages.warning(request, 'texto qualquer')
+    messages.error(request, 'texto qualquer')
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
