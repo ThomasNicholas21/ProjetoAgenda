@@ -7,8 +7,6 @@ from django.contrib import messages
 def create(request):
     form_action = reverse('contact:create')
     
-    messages.info(request, message='texto qualquer')
-
     if request.method == "POST":
         form = ContactForm(request.POST, request.FILES)
         context = {
@@ -20,7 +18,8 @@ def create(request):
         # não retornar nenhum erro
         if form.is_valid():
             contact = form.save()
-            return redirect('contact:update', contact_id=contact.id)
+            messages.success(request, 'Contato Cadastrado')
+            return redirect('contact:contact', contact_id=contact.id)
 
 
         return render(
