@@ -1,9 +1,10 @@
 from django.shortcuts import render
+from django.urls import reverse
 from contact.forms import RegisterForm
 from django.contrib import messages
 
 def register(request):
-    form = RegisterForm()
+    form_action = reverse('contact:register')
 
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -16,6 +17,7 @@ def register(request):
         request,
         'contact/register.html',
         {
-            'form': form,
+            'form': RegisterForm(),
+            'form_action': form_action,
         }
     )
