@@ -28,13 +28,33 @@ def register(request):
 def update_view(request):
     form = RegisterUpdteForm(instance=request.user)
     
+    if request.method != 'POST':
+        return render(
+            request,
+            'contact/register.html',
+            {
+                'form': form,
+            }
+        )
+    
+    form = RegisterUpdteForm(data=request.POST, instance=request.user)
+    if not form.is_valid():
+        return render(
+            request,
+            'contact/register.html',
+            {
+                'form': form,
+            }
+        )
+    
+    form.save()
     return render(
-        request,
-        'contact/register.html',
-        {
-            'form': form,
-        }
-    )
+            request,
+            'contact/register.html',
+            {
+                'form': form,
+            }
+        )
 
 def login_view(request):
     form = AuthenticationForm(request)
