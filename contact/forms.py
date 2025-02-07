@@ -213,6 +213,17 @@ class RegisterUpdteForm(forms.ModelForm):
             # 'password1', 'password2'
         )
 
+    def save(self, commit=True):
+        cleaned_data = self.cleaned_data
+        user =  super().save(commit=False)
+
+        password = cleaned_data.get('password1')
+        if password:
+            user.set_password(password)
+
+        if commit:
+            user.save()
+
     def clean(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
