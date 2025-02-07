@@ -7,11 +7,11 @@
     {% if user.is_authenticated %}
         <p>
             Login de {{ user.username }}
-            clique <a href="">aqui</a>
+            clique <a href="{% url "contact:logout" %}">aqui</a>
             para sair
         </p>
     {% else %}
-    
+
     {% include "contact/partials/user_form.html" %}
 
     {% endif %}
