@@ -25,5 +25,5 @@ urlpatterns = [
     #path('contact/<int:contact_id>/update/', views.update, name='update'),
     path('user/login/', views.login_view, name='login'),
     path('user/logout/', views.logout_view, name='logout'),
-    path('user/update/', views.update_view, name='update'),
+    path('user/update/', views.update_view, name='user_update'),
 ]
