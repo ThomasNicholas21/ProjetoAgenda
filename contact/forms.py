@@ -224,6 +224,8 @@ class RegisterUpdteForm(forms.ModelForm):
         if commit:
             user.save()
 
+        return user
+    
     def clean(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
@@ -231,7 +233,7 @@ class RegisterUpdteForm(forms.ModelForm):
         if password1 or password2:
             if password1 != password2:
                 self.add_error(
-                    'password1', 
+                    'password2', 
                     ValidationError(
                         'As senhas devem ser iguais',
                         code='invalid'
