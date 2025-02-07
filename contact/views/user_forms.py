@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from contact.forms import RegisterForm
+from contact.forms import RegisterForm, RegisterUpdteForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
@@ -22,6 +22,17 @@ def register(request):
         {
             'form': RegisterForm(),
             'form_action': form_action,
+        }
+    )
+
+def update_view(request):
+    form = RegisterUpdteForm(instance=request.user)
+    
+    return render(
+        request,
+        'contact/register.html',
+        {
+            'form': form,
         }
     )
 
