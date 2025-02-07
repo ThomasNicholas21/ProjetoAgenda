@@ -213,6 +213,22 @@ class RegisterUpdteForm(forms.ModelForm):
             # 'password1', 'password2'
         )
 
+    def clean(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
+
+        if password1 or password2:
+            if password1 != password2:
+                self.add_error(
+                    'password1', 
+                    ValidationError(
+                        'As senhas devem ser iguais',
+                        code='invalid'
+                    )
+                )
+
+        return super().clean()
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
         current_email = self.instance.email
