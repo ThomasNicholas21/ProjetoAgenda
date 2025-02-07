@@ -51,5 +51,6 @@ def login_view(request):
 
 def logout_view(request):
     auth.logout(request)
+    messages.success(request, 'Usuário deslogado')
     return redirect('contact:login')
 
