@@ -31,7 +31,7 @@ def update_view(request):
     if request.method != 'POST':
         return render(
             request,
-            'contact/register.html',
+            'contact/user_update.html',
             {
                 'form': form,
             }
@@ -41,7 +41,7 @@ def update_view(request):
     if not form.is_valid():
         return render(
             request,
-            'contact/register.html',
+            'contact/user_update.html',
             {
                 'form': form,
             }
