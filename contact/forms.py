@@ -167,6 +167,20 @@ class RegisterForm(UserCreationForm):
         return email
     
 class RegisterUpdteForm(forms.ModelForm):
+    first_name = forms.CharField(
+        min_length=1,
+        max_length=20,
+        required=True,
+        help_text='Required',
+        error_messages={
+            'min_length': 'Add 1 latter to complete.'
+        }
+    )
+    last_name = forms.CharField()
+    email = forms.EmailField()
+    password1 = forms.CharField()
+    password2 = forms.CharField()
+    
     class Meta:
         model = User
         fields = (
