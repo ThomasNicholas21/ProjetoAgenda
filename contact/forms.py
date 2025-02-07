@@ -187,7 +187,7 @@ class RegisterUpdteForm(forms.ModelForm):
         }
     )
     password1 = forms.CharField(
-        label='Password1',
+        label='Password',
         required=False,
         strip=False,
         widget=forms.PasswordInput(attrs={
@@ -195,7 +195,15 @@ class RegisterUpdteForm(forms.ModelForm):
         }),
         help_text=password_validation.password_validators_help_text_html(),
     )
-    password2 = forms.CharField()
+    password2 = forms.CharField(
+        label='Confirm Password',
+        required=False,
+        strip=False,
+        widget=forms.PasswordInput(attrs={
+            'autocomplete':'new-password'
+        }),
+        help_text=password_validation.password_validators_help_text_html(),
+    )
     
     class Meta:
         model = User
