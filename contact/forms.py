@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from contact.models import Contact
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import password_validation
 
 class ContactForm(forms.ModelForm):
     first_name = forms.CharField(
@@ -176,9 +177,24 @@ class RegisterUpdteForm(forms.ModelForm):
             'min_length': 'Add 1 latter to complete.'
         }
     )
-    last_name = forms.CharField()
-    email = forms.EmailField()
-    password1 = forms.CharField()
+    last_name = forms.CharField(
+        min_length=1,
+        max_length=20,
+        required=True,
+        help_text='Required',
+        error_messages={
+            'min_length': 'Add 1 latter to complete.'
+        }
+    )
+    password1 = forms.CharField(
+        label='Password1',
+        required=False,
+        strip=False,
+        widget=forms.PasswordInput(attrs={
+            'autocomplete':'new-password'
+        }),
+        help_text=password_validation.password_validators_help_text_html(),
+    )
     password2 = forms.CharField()
     
     class Meta:
