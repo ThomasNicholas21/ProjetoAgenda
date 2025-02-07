@@ -212,3 +212,19 @@ class RegisterUpdteForm(forms.ModelForm):
             'email', 'username', 
             # 'password1', 'password2'
         )
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        current_email = self.instance.email
+
+        if current_email != email:
+            if User.objects.filter(email=email).exists():
+                self.add_error(
+                    'email',
+                    ValidationError(
+                        'Já existe este e-mail',
+                        code='invalid'
+                    )
+                )
+
+        return email
