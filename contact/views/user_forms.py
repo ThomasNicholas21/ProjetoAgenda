@@ -46,22 +46,6 @@ def login_view(request):
     )
 
 def logout_view(request):
-    form = AuthenticationForm(request)
-
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-
-        if form.is_valid():
-            user = form.get_user()
-            auth.logout(request, user)
-    
-
-    context = {
-        'form': form
-    }
-    return render(
-        request,
-        'contact/login.html',
-        context
-    )
+    auth.logout(request)
+    return redirect('contact:login')
 
