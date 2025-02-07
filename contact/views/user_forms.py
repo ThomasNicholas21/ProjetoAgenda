@@ -14,7 +14,7 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Usuário Registrado')
-            return redirect('contact:index')
+            return redirect('contact:login')
     
     return render(
         request,
