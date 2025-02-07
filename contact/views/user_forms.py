@@ -34,6 +34,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             auth.login(request, user)
+            messages.success(request, 'Logado com sucesso!')
+            return redirect('contact:index')
+        
+        messages.error(request, 'Login Inválido')
     
 
     context = {
