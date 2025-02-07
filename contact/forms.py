@@ -228,3 +228,18 @@ class RegisterUpdteForm(forms.ModelForm):
                 )
 
         return email
+    
+    def clean_password1(self):
+        password1 = self.cleaned_data.get('password1')
+
+        if password1:
+            try:
+                password_validation.validate_password(password1)
+            except ValidationError as error:
+                self.add_error(
+                    'password1',
+                    ValidationError(
+                        error,
+                        code='invalid'
+                    )
+                )
