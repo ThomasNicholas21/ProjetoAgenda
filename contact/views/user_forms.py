@@ -48,13 +48,9 @@ def update_view(request):
         )
     
     form.save()
-    return render(
-            request,
-            'contact/register.html',
-            {
-                'form': form,
-            }
-        )
+    messages.success(request, 'Usuário atualizado com sucesso.')
+    return redirect('contact:user_update')
+
 
 def login_view(request):
     form = AuthenticationForm(request)
