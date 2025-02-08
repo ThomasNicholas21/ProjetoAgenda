@@ -210,7 +210,6 @@ class RegisterUpdteForm(forms.ModelForm):
         fields = (
             'first_name', 'last_name', 
             'email', 'username', 
-            # 'password1', 'password2'
         )
 
     def save(self, commit=True):
@@ -272,3 +271,5 @@ class RegisterUpdteForm(forms.ModelForm):
                         code='invalid'
                     )
                 )
+
+        return password1
