@@ -4,6 +4,7 @@ from contact.forms import RegisterForm, RegisterUpdteForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     form_action = reverse('contact:register')
@@ -25,6 +26,7 @@ def register(request):
         }
     )
 
+@login_required(login_url='contact:login')
 def update_view(request):
     form = RegisterUpdteForm(instance=request.user)
     
