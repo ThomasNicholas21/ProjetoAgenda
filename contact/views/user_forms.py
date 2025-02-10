@@ -78,6 +78,7 @@ def login_view(request):
         context
     )
 
+@login_required(login_url='contact:login')
 def logout_view(request):
     auth.logout(request)
     messages.success(request, 'Usuário deslogado')
