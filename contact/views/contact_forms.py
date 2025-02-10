@@ -19,9 +19,11 @@ def create(request):
         # funcao que retorna true se o formulario
         # não retornar nenhum erro
         if form.is_valid():
-            contact = form.save()
+            contact = form.save(commit=False)
+            contact.owner = request.user
+            contact.save()
             messages.success(request, 'Contato Cadastrado')
-            return redirect('contact:contact', contact_id=contact.id)
+            return redirect('contact:contact', contact_id=contact.pk)
 
 
         return render(
