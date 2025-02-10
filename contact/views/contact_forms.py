@@ -3,7 +3,9 @@ from contact.models import Contact
 from contact.forms import ContactForm
 from django.urls import reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='contact:login')
 def create(request):
     form_action = reverse('contact:create')
     
