@@ -9,3 +9,4 @@ Uma __imagem__ normalmente contem um sistema operacional e configurações. Nece
 
 ### Virtualização, armazenamento e Snapshots
 - Virtualização: A virtualização dos hardwares, permite que a VM tenha acesso de hardwares, podendo ser controlada pelo Hypervisor.
+- Armazenamento: A Vm utiliza discos virutal que simulam HD físicos.
