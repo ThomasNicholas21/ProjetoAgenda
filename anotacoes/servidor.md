@@ -6,3 +6,6 @@ Hypervisor é um software responsável por gerenciar as maquinas virtuais, permi
 
 ### Imagem VM
 Uma __imagem__ normalmente contem um sistema operacional e configurações. Necessário baixar ISO do Ubunto.
+
+### Virtualização, armazenamento e Snapshots
+- Virtualização: A virtualização dos hardwares, permite que a VM tenha acesso de hardwares, podendo ser controlada pelo Hypervisor.
