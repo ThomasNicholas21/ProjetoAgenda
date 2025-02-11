@@ -12,4 +12,18 @@ Uma __imagem__ normalmente contem um sistema operacional e configurações. Nece
 - Armazenamento: A Vm utiliza discos virutal que simulam HD físicos.
 - Snapshots: Forma de mostrar o estado atual da VM para que possa ser restaurada.
 
+### Tipos de Virtualização
+- **Virtualização Completa**
+    - O hypervisor emula completamente o hardware para que o sistema operacional convidado funcione sem modificações.
 
+- **Paravirtualização**
+    - O SO convidado é modificado para se comunicar diretamente com o hypervisor, reduzindo a sobrecarga e aumentando a eficiência.
+
+- **Virtualização de Armazenamento**
+    - Permite abstrair diferentes dispositivos de armazenamento para as VMs, criando um pool de discos virtuais.
+
+- **Virtualização de Rede**
+    - Criação de redes virtuais dentro do hypervisor para isolar, conectar ou simular redes físicas.
+
+- **Containers vs. VMs**
+    - Os containers (exemplo: Docker, LXC) são uma forma de virtualização mais leve que compartilha o mesmo kernel do SO, diferente das VMs que possuem um SO completo.
