@@ -39,3 +39,13 @@ Ao instalar, juntamente a ISO, algumas dependências são necessárias na instal
 Opcional
 >sudo apt install git
 ```
+## SSH
+Necessário instalar o SSH e realizar as seguintes configurações:
+```cmd
+sudo apt install ssh
+```
+Depois configurar o SSH, para senhas e tentativas de autenticação (opcional):
+```cmd
+>sudo nano etc/ssh/sshd_config
+```
+Procurar por PasswordAuthentication e MaxAuthTries (configurar de acordo com a aplicação)
