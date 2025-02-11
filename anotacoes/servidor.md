@@ -27,3 +27,15 @@ Uma __imagem__ normalmente contem um sistema operacional e configurações. Nece
 
 - **Containers vs. VMs**
     - Os containers (exemplo: Docker, LXC) são uma forma de virtualização mais leve que compartilha o mesmo kernel do SO, diferente das VMs que possuem um SO completo.
+
+## VirtualBox
+Necessário estar configurado, como Rede (modo bridge), configuração de mémoria RAM cpu. As configurações variam de acordo com cada interesse.
+
+## Ubuntu
+Ao instalar, juntamente a ISO, algumas dependências são necessárias na instalação, como:
+```cmd
+>sudo apt upgrade
+>sudo apt install build-essentials gcc make perl dkms curl
+Opcional
+>sudo apt install git
+```
