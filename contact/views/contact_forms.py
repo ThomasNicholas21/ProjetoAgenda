@@ -68,8 +68,11 @@ def update(request, contact_id):
         # funcao que retorna true se o formulario
         # não retornar nenhum erro
         if form.is_valid(): 
-            contact = form.save()
-            return redirect('contact:update', contact_id=contact.id)
+            contact = form.save(commit=False)
+            contact.owner = request.user
+            contact.save()
+            messages.success(request, 'Contato Cadastrado')            
+            return redirect('contact:contact', contact_id=contact.id)
 
 
         return render(
