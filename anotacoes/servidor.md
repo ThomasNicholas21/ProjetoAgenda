@@ -138,3 +138,15 @@ Configurando repositório:
 >git init
 >git remote add agendarepo ~/agendarepo
 ```
+
+__Computador Local__
+```cmd
+>git remote add agendarepo usuario@IP_SERVIDOR:~/agendarepo
+>git push agendarepo master
+```
+
+__Servidor__
+```cmd
+>cd ~/agendaapp
+>git pull agendarepo main
+```
