@@ -150,3 +150,19 @@ __Servidor__
 >cd ~/agendaapp
 >git pull agendarepo main
 ```
+
+### Configurando Base de Dados para servidor (Nesse caso, foi utilizado Postgresql)
+```cmd
+sudo -u postgres psql
+
+# Copie de acordo com a configuração local_settings.py
+postgres=# create role usuario_agenda with login superuser createdb createrole password 'senha_usuario_agenda';
+CREATE ROLE
+postgres=# create database projeto_agenda with owner usuario_agenda;
+CREATE DATABASE
+postgres=# grant all privileges on database projeto_agenda to usuario_agenda;
+GRANT
+postgres=# \q
+
+sudo systemctl restart postgresql
+```
