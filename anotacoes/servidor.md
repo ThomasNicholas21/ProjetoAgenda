@@ -166,3 +166,17 @@ postgres=# \q
 
 sudo systemctl restart postgresql
 ```
+
+### Criar o local_settings.py no servidor:
+Ao acessar o editor de texto do Servidor, cole as configurações feitas para o database, salve com ctrl O e depois saia com ctrl X.
+```cmd
+nano ~/agendaapp/project/local_settings.py
+
+```
+
+### Configurar Django no Servidor
+Deve-se instalar as depndências do projetos (requirements.txt), e também as seguintes bibliotecas:
+```cmd
+pip install gunicorn
+pip install psycopg
+```
