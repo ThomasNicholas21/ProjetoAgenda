@@ -180,3 +180,12 @@ Deve-se instalar as depndências do projetos (requirements.txt), e também as se
 pip install gunicorn
 pip install psycopg
 ```
+
+Depois realizar a configuração do Django:
+```cmd
+python manage.py runserver
+python manage.py migrate
+python manage.py collectstatic
+python manage.py createsuperuser
+```
+_OBS_: Crie senha de usuário forte!!
