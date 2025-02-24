@@ -113,3 +113,28 @@ Para Instalar Servidor:
 ```cmd
 >sudo apt install git -y
 ```
+
+### Configurando GIT
+Configuração inicial Git:
+```cmd
+>git config --global user.name 'Seu nome'
+>git config --global user.email 'seu_email@gmail.com'
+```
+
+Criação do repostiório no servidor:
+```cmd
+>mkdir ~/agendarepo ~/agendaapp
+```
+
+Configurando reporsitório bare:
+```cmd
+>cd ~/agendarepo
+>git init --bare
+```
+
+Configurando repositório:
+```cmd
+>cd ~/agendaapp
+>git init
+>git remote add agendarepo ~/agendarepo
+```
