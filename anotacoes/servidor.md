@@ -76,3 +76,8 @@ Para conectar no servidor:
 ```cmd
 ssh user@ip_server
 ```
+
+Para atualizar:
+```cmd
+>sudo apt update -y
+```
