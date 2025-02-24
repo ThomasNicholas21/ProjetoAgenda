@@ -77,7 +77,39 @@ Para conectar no servidor:
 ssh user@ip_server
 ```
 
-Para atualizar:
+Comando iniciais:
 ```cmd
 >sudo apt update -y
+```
+```cmd
+>sudo apt upgrade -y
+```
+```cmd
+>sudo apt autoremove -y
+```
+```cmd
+>sudo apt install build-essential -y
+```
+Para instalar Python
+```cmd
+>sudo add-apt-repository ppa:deadsnakes/ppa
+```
+```cmd
+>sudo apt install python3.11 python3.11-venv
+```
+Para Instalar Servidor:
+```cmd
+>sudo apt install nginx -y
+```
+```cmd
+>sudo apt install certbot python3-certbot-nginx -y
+```
+```cmd
+>sudo apt install postgresql postgresql-contrib -y
+```
+```cmd
+>sudo apt install libpq-dev -y
+```
+```cmd
+>sudo apt install git -y
 ```
