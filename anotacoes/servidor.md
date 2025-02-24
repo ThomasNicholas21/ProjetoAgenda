@@ -40,6 +40,7 @@ Opcional
 >sudo apt install git
 ```
 ## SSH
+### Primeiro passo
 Necessário instalar o SSH e realizar as seguintes configurações:
 ```cmd
 sudo apt install ssh
@@ -49,3 +50,15 @@ Depois configurar o SSH, para senhas e tentativas de autenticação (opcional):
 >sudo nano etc/ssh/sshd_config
 ```
 Procurar por PasswordAuthentication e MaxAuthTries (configurar de acordo com a aplicação)
+
+### Segundo passo
+Após realizar a configuração, é necessário gerar as chaves, privada e pública, fora da máquina virtual
+```cmd
+> ssh-keygen -t rsa -b 4096 -C "comentario_chave"
+```
+Depois de realizar esse comando é solicitado o caminho e senha (opcional). Após gerar as chaves, insira a chave pública no servidor:
+```cmd
+> nano ~/.ssh/authorized-keys
+```
+Salve apertando ctrl O e feche apertando ctrl X.
+
