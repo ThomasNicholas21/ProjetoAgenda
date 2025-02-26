@@ -376,3 +376,33 @@ Depois disso crie um link para site-enable da seguinte maneira:
 > sudo ln -s etc/nginx/sites-available/agenda etc/nginx/sites-enable
 ```
 
+# Como fazer alterações com git, gunicorn e nginx
+## git
+Ao fazer alteração local, necessário fazer o push para o repositório bare configurado no servidor, nesse caso seria:
+```cmd
+>git push agendarepo master
+```
+OBS: Antes de realizar o push, é interessante verificar se o repositório do servidor está sincronizado com repositório bare, realizando:
+```cmd
+>git status
+>git add .
+>git commit -m "texto"
+>git push agendarepo master
+```
+
+Depois de realizar o push para agendarepo do ambiente de desenvolvimento local é necessário realizar um pull no repositório em produção:
+```cmd
+>git pull agendarepo master
+```
+
+## gunicorn
+Necessário realizar o restart do servidor configurado com gunicorn.
+```cmd
+>sudo systemctl restart agenda
+```
+## nginx
+Necessário realizar o restart do servidor configurado com gunicorn.
+```cmd
+>sudo systemctl restart nginx
+```
+
