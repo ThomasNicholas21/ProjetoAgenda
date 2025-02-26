@@ -7,8 +7,8 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 
 def register(request):
-    form_action = reverse('contact:register')
-
+    form = RegisterForm()
+    
     if request.method == 'POST':
         form = RegisterForm(request.POST)
 
@@ -21,8 +21,7 @@ def register(request):
         request,
         'contact/register.html',
         {
-            'form': RegisterForm(),
-            'form_action': form_action,
+            'form': form,
         }
     )
 
