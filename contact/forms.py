@@ -194,7 +194,7 @@ class RegisterUpdteForm(forms.ModelForm):
         widget=forms.PasswordInput(attrs={
             'autocomplete':'new-password'
         }),
-        help_text=password_validation.password_validators_help_text_html(),
+        help_text='Use the same password as before'
     )
     
     class Meta:
@@ -226,8 +226,7 @@ class RegisterUpdteForm(forms.ModelForm):
                 self.add_error(
                     'password2', 
                     ValidationError(
-                        'As senhas devem ser iguais',
-                        code='invalid'
+                        'As senhas devem ser iguais'
                     )
                 )
 
