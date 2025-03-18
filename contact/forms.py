@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from contact.models import Contact
+from contact.models import Contact, Category
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import password_validation
@@ -53,13 +53,21 @@ class ContactForm(forms.ModelForm):
         label='Descrição',
     )
 
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.all(),
+        empty_label="-------", 
+        widget=forms.Select(attrs={'class': 'form-control'}),
+        label='Categoria'  
+    )
+
     picture = forms.ImageField(
         widget=forms.FileInput(
             attrs={
                 'accept': 'image/*',
             }
         ),
-        required=False
+        required=False,
+        label='Imagem'
     )
     
 
@@ -142,27 +150,28 @@ class RegisterForm(UserCreationForm):
             attrs={
                 'placeholder': 'Insira seu primeiro nome'
             }
-        )
+        ),
+        label='Usuário'
     )
 
     password1 = forms.CharField(
-        widget=forms.TextInput(
+        widget=forms.PasswordInput(
             attrs={
                 'placeholder': 'Insira sua senha'
             }
         ),
         help_text=password_validation.password_validators_help_text_html(),
-        label='Password'
+        label='Senha'
     )
 
     password2 = forms.CharField(
-        widget=forms.TextInput(
+        widget=forms.PasswordInput(
             attrs={
                 'placeholder': 'Confirme sua senha'
             }
         ),
-        help_text='Use the same password as before',
-        label='Confirm Password'
+        help_text='Use a mesma senha de antes',
+        label='Confirme sua Senha'
     )
 
     class Meta:
@@ -195,7 +204,8 @@ class RegisterUpdteForm(forms.ModelForm):
         help_text='Required',
         error_messages={
             'min_length': 'Add 1 latter to complete.'
-        }
+        },
+        label='Nome'
     )
     last_name = forms.CharField(
         min_length=1,
@@ -204,10 +214,11 @@ class RegisterUpdteForm(forms.ModelForm):
         help_text='Required',
         error_messages={
             'min_length': 'Add 1 latter to complete.'
-        }
+        },
+        label='Sobrenome'
     )
     password1 = forms.CharField(
-        label='Password',
+        label='Senha',
         required=False,
         strip=False,
         widget=forms.PasswordInput(attrs={
@@ -216,7 +227,7 @@ class RegisterUpdteForm(forms.ModelForm):
         help_text=password_validation.password_validators_help_text_html(),
     )
     password2 = forms.CharField(
-        label='Confirm Password',
+        label='Confirme sua Senha',
         required=False,
         strip=False,
         widget=forms.PasswordInput(attrs={
