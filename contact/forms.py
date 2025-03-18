@@ -152,6 +152,7 @@ class RegisterForm(UserCreationForm):
             }
         ),
         help_text=password_validation.password_validators_help_text_html(),
+        label='Password'
     )
 
     password2 = forms.CharField(
@@ -160,7 +161,8 @@ class RegisterForm(UserCreationForm):
                 'placeholder': 'Confirme sua senha'
             }
         ),
-        help_text='Use the same password as before'
+        help_text='Use the same password as before',
+        label='Confirm Password'
     )
 
     class Meta:
