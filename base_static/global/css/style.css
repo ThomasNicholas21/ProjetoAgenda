@@ -159,7 +159,7 @@
   .table-link {
     color: var(--link-dark-color);
     transition: color var(--transition-fast) ease-in-out;
-    text-decoration: none;
+    text-decoration: underline;
   }
   
   .table-link:hover {
