@@ -10,28 +10,28 @@
             {% if user.is_authenticated %}
             <li class="menu-item">
                 <a href="{% url "contact:create" %}" class="menu-link">
-                    Create
+                    Criar Contato
                 </a>
             </li>
             <li class="menu-item">
                 <a href="{% url "contact:user_update" %}" class="menu-link">
-                    Profile
+                    Perfil
                 </a>
             </li>
             <li class="menu-item">
                 <a href="{% url "contact:login" %}" class="menu-link">
-                    Logout
+                    Deslogar
                 </a>
             </li>
             {% else %}
             <li class="menu-item">
                 <a href="{% url "contact:login" %}" class="menu-link">
-                    Login
+                    Logar
                 </a>
             </li>
             <li class="menu-item">
                 <a href="{% url "contact:register" %}" class="menu-link">
-                    Register
+                    Cadastrar
                 </a>
             </li>
             {% endif %}
