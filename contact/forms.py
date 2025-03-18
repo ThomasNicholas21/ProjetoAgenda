@@ -137,6 +137,32 @@ class RegisterForm(UserCreationForm):
         label='E-mail'
     )
 
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Insira seu primeiro nome'
+            }
+        )
+    )
+
+    password1 = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Insira sua senha'
+            }
+        ),
+        help_text=password_validation.password_validators_help_text_html(),
+    )
+
+    password2 = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Confirme sua senha'
+            }
+        ),
+        help_text='Use the same password as before'
+    )
+
     class Meta:
         model = User
         fields = (
