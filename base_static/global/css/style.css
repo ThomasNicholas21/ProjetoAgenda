@@ -2,6 +2,7 @@
   --spacing: 1rem;
   --link-dark-color: rgb(33, 37, 41);
   --link-light-color: rgb(255, 255, 255);
+  --blue-light-color: rgb(24, 56, 243);
   --clr-white: rgb(250, 250, 250);
   --clr-black: rgb(20, 20, 20);
   --clr-light-gray: rgb(240, 240, 245);
@@ -157,7 +158,7 @@
   }
   
   .table-link {
-    color: var(--link-dark-color);
+    color: var(--blue-light-color);
     transition: color var(--transition-fast) ease-in-out;
     text-decoration: underline;
   }
