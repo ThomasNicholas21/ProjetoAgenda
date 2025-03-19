@@ -11,7 +11,7 @@ Este é um projeto desenvolvido para aprofundar conhecimentos no framework Djang
 - Definição de `models` para manipulação de dados no banco de dados;
 - Configuração do painel administrativo para gerenciar contatos;
 - Implementação de `views` baseadas em funções `FBV` para controle das lógicas da aplicação;
-- Uso de `forms` para cadastro, edição de contatos e validação contato;
+- Uso de `forms` para cadastro, edição de contatos e validação dos dados do contato;
 - Sistema de autenticação de usuário integrado ao Django;
 - Utilização de `Django Templates` para renderização dinâmica de páginas;
 - Utilização da arquitetura `MVT (Model-View-Template)` estrutura nativa do Django que separa a lógica de dados (Model), a lógica de exibição (Template) e o controle de fluxo da aplicação (View), garantindo um código mais modular e organizado.
