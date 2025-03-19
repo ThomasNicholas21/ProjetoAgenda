@@ -2,11 +2,11 @@
 
 {% block content %}
     <div class="form-wrapper">
-        <h2>Logar</h2>
+        <h2>Login</h2>
 
     {% if user.is_authenticated %}
         <p>
-            Login de {{ user.username }}
+            Login de {{ user.username }},
             clique <a href="{% url "contact:logout" %}">aqui</a>
             para sair
         </p>
