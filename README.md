@@ -10,7 +10,7 @@ Este é um projeto desenvolvido para aprofundar conhecimentos no framework Djang
 - Uso de URLs dinâmicas para navegação eficiente;
 - Definição de `models` para manipulação de dados no banco de dados;
 - Configuração do painel administrativo para gerenciar contatos;
-- Implementação de `views` baseadas em funções `FBV` para controle das lógicas da aplicação;
+- Implementação de `views` baseadas em funções `FBV (Function-Based-Views)` para controle das lógicas da aplicação;
 - Uso de `forms` para cadastro, edição de contatos e validação dos dados do contato;
 - Sistema de autenticação de usuário integrado ao Django;
 - Utilização de `Django Templates` para renderização dinâmica de páginas;
