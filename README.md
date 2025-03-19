@@ -14,7 +14,7 @@ Este é um projeto desenvolvido para aprofundar conhecimentos no framework Djang
 - Uso de `forms` para cadastro, edição de contatos e validação dos dados do contato;
 - Sistema de autenticação de usuário integrado ao Django;
 - Utilização de `Django Templates` para renderização dinâmica de páginas;
-- Utilização da arquitetura `MVT (Model-View-Template)` estrutura nativa do Django que separa a lógica de dados (Model), a lógica de exibição (Template) e o controle de fluxo da aplicação (View), garantindo um código mais modular e organizado.
+- Utilização da arquitetura `MVT (Model-View-Template)`, estrutura nativa do Django que separa a lógica de dados (Model), a lógica de exibição (Template) e o controle de fluxo da aplicação (View), garantindo um código mais modular e organizado.
 
 ## :gear: Tecnologias utilizadas
 
