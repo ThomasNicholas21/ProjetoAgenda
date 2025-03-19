@@ -233,7 +233,7 @@ class RegisterUpdteForm(forms.ModelForm):
         widget=forms.PasswordInput(attrs={
             'autocomplete':'new-password'
         }),
-        help_text='Use the same password as before'
+        help_text='Use a mesma senha de antes'
     )
     
     class Meta:
