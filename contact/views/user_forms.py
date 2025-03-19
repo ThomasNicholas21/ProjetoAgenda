@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse
 from contact.forms import RegisterForm, RegisterUpdteForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
