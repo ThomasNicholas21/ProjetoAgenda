@@ -25,8 +25,8 @@ Este é um projeto desenvolvido para aprofundar conhecimentos no framework Djang
 ## :clipboard: Funcionalidades
 
 - Cadastro, edição, inativação e exclusão de contatos;
-- Pesquisa de contatos por nome ou telefone;
-- Cadastrar e editar perfil;
+- Filtro de contatos por nome ou telefone;
+- Cadastrar e editar perfil do usuário;
 - Autenticação de usuário para acesso ao sistema;
 - Gerenciamento de contatos e usuários via painel administrativo do Django.
 
