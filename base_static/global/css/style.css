@@ -196,7 +196,7 @@
   }
   
   .pagination .step-links a {
-    color: var(--link-dark-color);
+    color: var(--blue-light-color);
     transition: color var(--transition-fast) ease-in-out;
     text-decoration: underline;
     display: block;
